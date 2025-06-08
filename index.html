@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kibo 便利貼 | Kibo Paste</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .language-selector {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .card {
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eaecef;
+            text-align: center;
+            font-size: 14px;
+            color: #6a737d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kibo 便利貼 | Kibo Paste</h1>
+    
+    <div class="language-selector">
+        <p>請選擇語言 / Please select a language:</p>
+        <p>
+            <a href="#" onclick="switchLanguage('zh'); return false;">繁體中文</a> | 
+            <a href="#" onclick="switchLanguage('en'); return false;">English</a>
+        </p>
+    </div>
+
+    <div id="zh-content">
+        <div class="card">
+            <h2>隱私政策</h2>
+            <p>了解 Kibo 便利貼如何保護您的隱私及我們如何處理數據。</p>
+            <a href="privacy_policy_zh.html">查看隱私政策</a>
+        </div>
+        
+        <div class="card">
+            <h2>支援中心</h2>
+            <p>需要幫助嗎？查看我們的常見問題解答或聯絡我們。</p>
+            <a href="support_zh.html">前往支援中心</a>
+        </div>
+    </div>
+
+    <div id="en-content" style="display: none;">
+        <div class="card">
+            <h2>Privacy Policy</h2>
+            <p>Learn how Kibo Paste protects your privacy and how we handle data.</p>
+            <a href="privacy_policy_en.html">View Privacy Policy</a>
+        </div>
+        
+        <div class="card">
+            <h2>Support Center</h2>
+            <p>Need help? Check our FAQs or contact us.</p>
+            <a href="support_en.html">Go to Support Center</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Kibo 便利貼 | Kibo Paste. All rights reserved.
+    </footer>
+
+    <script>
+        function switchLanguage(lang) {
+            if (lang === 'zh') {
+                document.getElementById('zh-content').style.display = 'block';
+                document.getElementById('en-content').style.display = 'none';
+            } else {
+                document.getElementById('zh-content').style.display = 'none';
+                document.getElementById('en-content').style.display = 'block';
+            }
+        }
+        
+        // 根據瀏覽器語言預設顯示對應版本
+        const userLang = navigator.language || navigator.userLanguage;
+        if (userLang.includes('zh')) {
+            switchLanguage('zh');
+        } else {
+            switchLanguage('en');
+        }
+    </script>
+</body>
+</html> 
